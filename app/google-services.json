@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "70013497085",
+    "project_id": "kotlin-khaos",
+    "storage_bucket": "kotlin-khaos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70013497085:android:a1ddf2ef911f2696b65894",
+        "android_client_info": {
+          "package_name": "com.kotlinkhaos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXWKDgBvl3GMX8hEM_O5Vq7Ss88P5P5XE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

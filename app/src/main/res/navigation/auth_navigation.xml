@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@+id/navigation_login">
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.kotlinkhaos.ui.auth.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_go_to_register"
+            app:destination="@id/navigation_register" />
+
+        <action
+            android:id="@+id/action_go_to_forget_password"
+            app:destination="@id/navigation_forgetPassword" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_forgetPassword"
+        android:name="com.kotlinkhaos.ui.auth.ForgetPasswordFragment"
+        android:label="@string/title_forgot_password2"
+        tools:layout="@layout/fragment_forget_password">
+
+            <action
+                android:id="@+id/action_go_to_login"
+                app:destination="@id/navigation_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.kotlinkhaos.ui.auth.RegisterFragment"
+        android:label="@string/title_register"
+        tools:layout="@layout/fragment_register" />
+
+</navigation>

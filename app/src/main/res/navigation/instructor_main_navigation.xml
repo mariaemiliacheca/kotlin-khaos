@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/instructor_main_navigation"
+    app:startDestination="@+id/navigation_instructor_home">
+
+    <fragment
+        android:id="@+id/navigation_instructor_home"
+        android:name="com.kotlinkhaos.ui.instructor.home.InstructorHomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_instructor_home">
+        <action
+            android:id="@+id/start_navigation_create_quiz"
+            app:destination="@+id/navigation_instructor_create_quiz" />
+        <action
+            android:id="@+id/start_navigation_quiz_details"
+            app:destination="@+id/navigation_instructor_quiz_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_instructor_create_quiz"
+        android:name="com.kotlinkhaos.ui.instructor.home.quizCreation.InstructorCreateQuizFragment"
+        android:label="@string/title_create_quiz"
+        tools:layout="@layout/fragment_instructor_create_quiz">
+        <action
+            android:id="@+id/start_navigation_start_quiz_preview"
+            app:destination="@+id/navigation_instructor_start_quiz_preview" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_instructor_start_quiz_preview"
+        android:name="com.kotlinkhaos.ui.instructor.home.quizCreation.InstructorStartQuizPreviewFragment"
+        android:label="@string/title_create_quiz"
+        tools:layout="@layout/fragment_instructor_start_quiz_preview">
+        <action
+            android:id="@+id/start_navigation_go_back_to_instructor_home"
+            app:destination="@+id/navigation_instructor_home"
+            app:popUpTo="@id/navigation_instructor_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_instructor_quiz_details"
+        android:name="com.kotlinkhaos.ui.instructor.home.quizDetails.InstructorQuizDetailsFragment"
+        android:label="@string/title_quiz_details"
+        tools:layout="@layout/fragment_instructor_start_quiz_preview">
+        <action
+            android:id="@+id/start_navigation_view_user_attempt"
+            app:destination="@+id/navigation_instructor_view_user_attempt" />
+        <argument
+            android:name="quizId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_instructor_view_user_attempt"
+        android:name="com.kotlinkhaos.ui.instructor.home.quizDetails.userAttempt.InstructorViewUserAttemptFragment"
+        android:label="@string/title_quiz_view_user_attempt"
+        tools:layout="@layout/fragment_instructor_start_quiz_preview">
+        <argument
+            android:name="quizId"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_instructor_course"
+        android:name="com.kotlinkhaos.ui.instructor.course.InstructorCourseFragment"
+        android:label="@string/title_course"
+        tools:layout="@layout/fragment_instructor_course" />
+    <fragment
+        android:id="@+id/navigation_instructor_create_course"
+        android:name="com.kotlinkhaos.ui.instructor.createCourse.InstructorCreateCourseFragment"
+        android:label="@string/title_create_course"
+        tools:layout="@layout/fragment_instructor_create_course">
+        <action
+            android:id="@+id/start_navigation_go_back_to_instructor_home"
+            app:destination="@+id/navigation_instructor_home"
+            app:popUpTo="@id/navigation_instructor_home" />
+    </fragment>
+
+
+</navigation>
